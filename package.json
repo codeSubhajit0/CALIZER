@@ -1,0 +1,44 @@
+{
+  "name": "calizer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "application:start": "next dev",
+    "application:build": "next build",
+    "application:start:production": "next start",
+    "application:lint": "biome check",
+    "application:format": "biome format --write",
+    "application:build:watch": "chokidar \"app/**/*\" \"pages/**/*\" \"components/**/*\" \"src/**/*\" -c \"bun run application:build\"",
+    "application:serve": "bun run application:format && bun run application:build && bun run application:start",
+    "application:serve:all": "concurrently -k -n BUILD,START -c blue,magenta \"bun run application:build:watch\" \"bun run application:start\"",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "concurrently": "^9.2.1",
+    "highcharts": "^12.5.0",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "chokidar-cli": "^3.0.0",
+    "husky": "^9.1.7",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ]
+}
