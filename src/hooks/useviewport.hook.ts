@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useviewport = () => {
+export const useViewport = () => {
   const [viewport, setViewport] = useState({
     height: globalThis.innerHeight,
     width: globalThis.innerWidth,
