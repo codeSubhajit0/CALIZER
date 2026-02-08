@@ -1,7 +1,11 @@
+import { Content } from "@/components/Content/Content";
+
 const Index = () => {
   return (
     <div>
-      <div>INDEX PAGE</div>
+      <div>
+        <Content />
+      </div>
     </div>
   );
 };
