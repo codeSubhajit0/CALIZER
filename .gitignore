@@ -1,21 +1,11 @@
 
-# Node / Package Managers
-
+# Node / Package Manager
 node_modules/
-.pnpm-store/
-.npm/
-.yarn/
-.yarn-cache/
-.yarnrc.yml
-.yarn-integrity
-package-lock.json
-pnpm-lock.yaml
-yarn.lock
-
 
 # Next.js build output
 
 .next/
+.next/dev/
 out/
 build/
 dist/
