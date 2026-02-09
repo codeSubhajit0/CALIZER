@@ -1,13 +1,7 @@
 import { Content } from "@/components/Content/Content";
 
 const Index = () => {
-  return (
-    <div>
-      <div>
-        <Content />
-      </div>
-    </div>
-  );
+  return <Content />;
 };
 
 export default Index;
