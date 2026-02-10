@@ -16,6 +16,8 @@
   "dependencies": {
     "concurrently": "^9.2.1",
     "highcharts": "^12.5.0",
+    "lucide-react": "^0.563.0",
+    "nanoid": "^5.1.6",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
