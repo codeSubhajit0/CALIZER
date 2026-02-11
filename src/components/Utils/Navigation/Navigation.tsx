@@ -1,9 +1,10 @@
 import { fontRoboto } from "@/lib/font";
 import Image from "next/image";
 import CalizerLogo from "../../../../public/logo.png";
-import { NAVIGATION_MENU_ITEMS } from "@/constants/NavigationMenu";
-import type { SCREEN_NAMES } from "@/constants/Config";
+import { NAVIGATION_MENU_ITEMS } from "@/constants/config/NavigationMenu";
+import type { SCREEN_NAMES } from "@/constants/data";
 import { Plus } from "lucide-react";
+import { useFeatureFlags } from "@/hooks/useFeatureFlags";
 
 interface NavigationProps {
   activeScreen: SCREEN_NAMES;
@@ -14,6 +15,8 @@ export const Navigation: React.FC<NavigationProps> = ({
   activeScreen,
   onScreenChange,
 }) => {
+  const { isEnabled } = useFeatureFlags();
+
   return (
     <div>
       <div className="flex items-center justify-between">
@@ -44,17 +47,19 @@ export const Navigation: React.FC<NavigationProps> = ({
               </button>
             );
           })}
-          <div>
-            <button
-              type="button"
-              className="group border-2 border-orange-400 bg-white p-1 rounded-full hover:cursor-pointer hover:bg-orange-400 transition-all duration-300"
-            >
-              <Plus
-                size={20}
-                className="group-hover:scale-120 transition-all duration-300"
-              />
-            </button>
-          </div>
+          {isEnabled("menu_add_item_icon_functionality") && (
+            <div>
+              <button
+                type="button"
+                className="group border-2 border-orange-400 bg-white p-1 rounded-full hover:cursor-pointer hover:bg-orange-400 transition-all duration-300"
+              >
+                <Plus
+                  size={20}
+                  className="group-hover:scale-120 transition-all duration-300"
+                />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

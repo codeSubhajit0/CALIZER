@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Home from "../Pages/Home/Home";
 import Navigation from "../Utils/Navigation/Navigation";
-import type { SCREEN_NAMES } from "@/constants/Config";
+import type { SCREEN_NAMES } from "@/constants/data";
 
 export const Content: React.FC = () => {
   const [activeScreen, setActiveScreen] = useState<SCREEN_NAMES>("Dashboard");
