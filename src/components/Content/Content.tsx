@@ -18,7 +18,7 @@ export const Content: React.FC = () => {
                 activeScreen={activeScreen}
                 onScreenChange={setActiveScreen}
               />
-              <div className="px-3">
+              <div className="">
                 <Home activeScreen={activeScreen} />
               </div>
             </div>

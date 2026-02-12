@@ -18,11 +18,11 @@ export const Navigation: React.FC<NavigationProps> = ({
   const { isEnabled } = useFeatureFlags();
 
   return (
-    <div>
+    <div className="mb-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <Image src={CalizerLogo} width={50} height={50} alt="calizer-logo" />
-          <h1 className={`${fontRoboto.className} font-bold text-2xl`}>
+          <Image src={CalizerLogo} width={50} height={50} alt="calizer-logo" className="hidden" />
+          <h1 className={`${fontRoboto.className} font-bold text-4xl`}>
             CALIZER <span className="text-orange-400">.</span>
           </h1>
         </div>
