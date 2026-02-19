@@ -1,33 +1,28 @@
 import { useState, useEffect } from "react";
 import { Calendar } from "lucide-react";
-import quotes from "@/constants/quotestext";
-
-type DateInfo = {
-  day: number;
-  dayName: string;
-  month: string;
-};
+import { QUOTES } from "@/constants/config/RandomQuotes";
+import type { DateTypes } from "@/global.types";
 
 const DateTracker: React.FC = () => {
-  const [date, setDate] = useState<DateInfo>({
+  const [date, setDate] = useState<DateTypes>({
     day: 0,
     dayName: "",
     month: "",
   });
-
-  const handelerDate = () => {
-    const today = new Date();
-    const date = today.getDate();
-    const dayName = today.toLocaleDateString("en-us", { weekday: "short" });
-    const monthName = today.toLocaleDateString("en-us", { month: "long" });
-
-    setDate({ day: date, dayName: dayName, month: monthName });
-  };
-
   const [quote, setQuote] = useState("");
+
   useEffect(() => {
-    const index = Math.floor(Math.random() * quotes.length);
-    setQuote(quotes[index]);
+    const handelerDate = () => {
+      const today = new Date();
+      const date = today.getDate();
+      const dayName = today.toLocaleDateString("en-us", { weekday: "short" });
+      const monthName = today.toLocaleDateString("en-us", { month: "long" });
+
+      setDate({ day: date, dayName: dayName, month: monthName });
+    };
+
+    const index = Math.floor(Math.random() * QUOTES.length);
+    setQuote(QUOTES[index]);
     handelerDate();
   }, []);
 

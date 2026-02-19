@@ -1,4 +1,4 @@
-const QUOTES = [
+export const QUOTES = [
   "Ready to eat healthy ?",
   "Ready to fuel your body right?",
   "Eat clean. Feel amazing",
@@ -6,5 +6,3 @@ const QUOTES = [
   "Your body deserves better!",
   "Eat well. Live strong.",
 ];
-
-export default QUOTES;
