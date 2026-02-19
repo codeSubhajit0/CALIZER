@@ -1,7 +1,9 @@
+import DateTracker from "@/components/Utils/DateTracker/DateTracker";
+
 const Dashboard: React.FC = () => {
   return (
     <div>
-      <div>DASHBOARD PAGE</div>
+      <DateTracker />
     </div>
   );
 };

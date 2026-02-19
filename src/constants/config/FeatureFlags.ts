@@ -1,6 +1,6 @@
 export const FEATURE_FLAG_ITEMS = {
-    // Feature keys with flag indicator
-    menu_add_item_icon_functionality: true
+  // Feature keys with flag indicator
+  menu_add_item_icon_functionality: true,
 } satisfies Record<string, boolean>;
 
 export type FEATURE_FLAG_KEY = keyof typeof FEATURE_FLAG_ITEMS;
