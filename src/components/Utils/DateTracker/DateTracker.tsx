@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Calendar } from "lucide-react";
 import { QUOTES } from "@/constants/config/RandomQuotes";
-import type { DateTypes } from "@/global.types";
+import type { DateTrackerTypes } from "./DateTracker.types";
 
 const DateTracker: React.FC = () => {
-  const [date, setDate] = useState<DateTypes>({
+  const [date, setDate] = useState<DateTrackerTypes>({
     day: 0,
     dayName: "",
     month: "",

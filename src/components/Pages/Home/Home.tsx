@@ -1,4 +1,4 @@
-import type { SCREEN_NAMES } from "@/constants/data";
+import type { SCREEN_NAMES } from "@/constants/global.types";
 import Dashboard from "../Dashboard/Dashboard";
 
 interface HomeProps {
