@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Calendar } from "lucide-react";
 import { QUOTES } from "@/constants/config/RandomQuotes";
 import type { DateTrackerTypes } from "./DateTracker.types";
+import { motion } from "motion/react";
 
 const DateTracker: React.FC = () => {
   const [date, setDate] = useState<DateTrackerTypes>({
@@ -27,7 +28,12 @@ const DateTracker: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex justify-between border-2 PADDING ROUNDED BACKGROUND MARGIN-BOTTOM">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className="flex justify-between border-2 PADDING ROUNDED BACKGROUND MARGIN-BOTTOM"
+    >
       <div className="flex flex-col">
         <span className="font-bold text-sm lg:text-3xl">{quote}</span>
         <span className=" text-pretty text-xs lg:text-lg">
@@ -45,7 +51,7 @@ const DateTracker: React.FC = () => {
           <span className="text-orange-500">{date.month}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
