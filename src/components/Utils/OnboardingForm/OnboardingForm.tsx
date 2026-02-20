@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
-import Loading from "../Loading/Loading";
 import { nanoid } from "nanoid";
 import type { OnboardingFormDataTypes } from "./OnboardingForm.types";
 import { useOnboardingStore } from "@/store/onboarding.store";
+import LoaderScreen from "../LoaderScreen/LoaderScreen";
 
 const TOTAL_STEPS = 3;
 
@@ -51,15 +51,7 @@ export const OnboardingForm: React.FC = () => {
   };
 
   if (loading) {
-    return (
-      <div className="fixed inset-0 z-50 bg-white bg-[radial-gradient(circle,rgba(0,0,0,0.12)_1px,transparent_1.2px)] bg-size-[22px_22px] flex flex-col items-center justify-center gap-5">
-        <span className="text-4xl font-bold">
-          CALIZER<span className="text-orange-400">.</span>
-        </span>
-        <Loading />
-        <p className="text-sm text-gray-500">Getting things ready for you</p>
-      </div>
-    );
+    return <LoaderScreen additionalNotes="Setting things up for you" />;
   }
 
   return (

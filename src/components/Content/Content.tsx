@@ -7,6 +7,7 @@ import { OnboardingForm } from "../Utils/OnboardingForm/OnboardingForm";
 import type { SCREEN_NAMES } from "@/constants/global.types";
 import { useFeatureFlags } from "@/hooks/useFeatureFlags";
 import { useOnboardingStore } from "@/store/onboarding.store";
+import LoaderScreen from "../Utils/LoaderScreen/LoaderScreen";
 
 export const Content: React.FC = () => {
   const { isEnabled } = useFeatureFlags();
@@ -21,6 +22,10 @@ export const Content: React.FC = () => {
     if (useOnboardingStore.persist.hasHydrated()) setHasHydrated(true);
     return unsub;
   }, []);
+
+  if (!hasHydrated) {
+    return <LoaderScreen />;
+  }
 
   return (
     <div className="h-screen w-full">
