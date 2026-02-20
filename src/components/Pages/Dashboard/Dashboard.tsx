@@ -4,11 +4,11 @@ import DateTracker from "@/components/Utils/date-tracker/DateTracker";
 
 const Dashboard: React.FC = () => {
   return (
-    <div>
+    <>
       <Banner />
       <DateTracker />
       <OnBoardingCard />
-    </div>
+    </>
   );
 };
 

@@ -6,11 +6,7 @@ interface HomeProps {
 }
 
 export const Home: React.FC<HomeProps> = ({ activeScreen }) => {
-  return (
-    <div>
-      <div>{activeScreen === "Dashboard" && <Dashboard />}</div>
-    </div>
-  );
+  return <div>{activeScreen === "Dashboard" && <Dashboard />}</div>;
 };
 
 export default Home;
