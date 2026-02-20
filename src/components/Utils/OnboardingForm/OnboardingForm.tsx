@@ -5,16 +5,12 @@ import { ChevronRight } from "lucide-react";
 import Loading from "../Loading/Loading";
 import { nanoid } from "nanoid";
 import type { OnboardingFormDataTypes } from "./OnboardingForm.types";
-
-interface OnboardingFormProps {
-  onComplete: () => void;
-}
+import { useOnboardingStore } from "@/store/onboarding.store";
 
 const TOTAL_STEPS = 3;
 
-export const OnboardingForm: React.FC<OnboardingFormProps> = ({
-  onComplete,
-}) => {
+export const OnboardingForm: React.FC = () => {
+  const { setOnboardingData, completeOnboarding } = useOnboardingStore();
   const [onboardingStep, setOnboardingStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [onboardingFormData, setOnboardingFormData] =
@@ -47,7 +43,10 @@ export const OnboardingForm: React.FC<OnboardingFormProps> = ({
         goal: onboardingFormData.goal,
       });
       setLoading(true);
-      setTimeout(onComplete, 2500);
+      setTimeout(() => {
+        setOnboardingData(onboardingFormData);
+        completeOnboarding();
+      }, 3000);
     }
   };
 
