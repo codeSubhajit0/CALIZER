@@ -2,7 +2,7 @@ import { useOnboardingStore } from "@/store/onboarding.store";
 import { Weight, ArrowUpFromDot, ArrowDownToDot } from "lucide-react";
 import { motion, cubicBezier } from "motion/react";
 
-const cardVariants = {
+const cardTransitionProperties = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1,
@@ -24,7 +24,7 @@ const OnBoardingCard: React.FC = () => {
     <div className="grid grid-cols-2 GAP">
       <motion.div
         custom={0}
-        variants={cardVariants}
+        variants={cardTransitionProperties}
         initial="hidden"
         animate="visible"
         className="border-2 flex gap-0.5 flex-col lg:flex-row  items-center justify-between PADDING ROUNDED bg-[#B7BDF7]"
@@ -39,7 +39,7 @@ const OnBoardingCard: React.FC = () => {
       </motion.div>
       <motion.div
         custom={1}
-        variants={cardVariants}
+        variants={cardTransitionProperties}
         initial="hidden"
         animate="visible"
         className="border-2 flex gap-0.5 flex-col lg:flex-row items-center justify-between PADDING ROUNDED bg-[#8BAE66]"
