@@ -1,4 +1,4 @@
-import Loading from "../Loading/Loading";
+import Loading from "../loading/Loading";
 
 interface LoaderScreenProps {
   additionalNotes?: string;

@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { nanoid } from "nanoid";
 import type { OnboardingFormDataTypes } from "./OnboardingForm.types";
 import { useOnboardingStore } from "@/store/onboarding.store";
-import LoaderScreen from "../LoaderScreen/LoaderScreen";
+import LoaderScreen from "../loader-screen/LoaderScreen";
 
 const TOTAL_STEPS = 3;
 

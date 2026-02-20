@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Home from "../Pages/Home/Home";
-import Navigation from "../Utils/Navigation/Navigation";
-import { OnboardingForm } from "../Utils/OnboardingForm/OnboardingForm";
+import Navigation from "../Utils/navigation/Navigation";
+import { OnboardingForm } from "../Utils/onboarding-form/OnboardingForm";
 import type { SCREEN_NAMES } from "@/constants/global.types";
 import { useFeatureFlags } from "@/hooks/useFeatureFlags";
 import { useOnboardingStore } from "@/store/onboarding.store";
-import LoaderScreen from "../Utils/LoaderScreen/LoaderScreen";
+import LoaderScreen from "../Utils/loader-screen/LoaderScreen";
 
 export const Content: React.FC = () => {
   const { isEnabled } = useFeatureFlags();
