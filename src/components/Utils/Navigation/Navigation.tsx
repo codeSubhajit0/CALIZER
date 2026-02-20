@@ -2,7 +2,7 @@ import { fontRoboto } from "@/lib/font";
 import Image from "next/image";
 import CalizerLogo from "../../../../public/logo.png";
 import { NAVIGATION_MENU_ITEMS } from "@/constants/config/NavigationMenu";
-import type { SCREEN_NAMES } from "@/constants/data";
+import type { SCREEN_NAMES } from "@/constants/global.types";
 import { Plus } from "lucide-react";
 import { useFeatureFlags } from "@/hooks/useFeatureFlags";
 
