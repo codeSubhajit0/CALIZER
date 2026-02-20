@@ -1,4 +1,4 @@
-import Loading from "../loading/Loading";
+import Loader from "../loader/Loader";
 
 interface LoaderScreenProps {
   additionalNotes?: string;
@@ -10,7 +10,7 @@ const LoaderScreen: React.FC<LoaderScreenProps> = ({ additionalNotes }) => {
       <div className="text-4xl mb-5 font-bold">
         CALIZER<span className="text-orange-400">.</span>
       </div>
-      <Loading />
+      <Loader />
       <div className="absolute bottom-20">
         <p className="text-sm text-gray-500">{additionalNotes}</p>
       </div>

@@ -16,11 +16,11 @@ export const Content: React.FC = () => {
   const [activeScreen, setActiveScreen] = useState<SCREEN_NAMES>("Dashboard");
 
   useEffect(() => {
-    const unsub = useOnboardingStore.persist.onFinishHydration(() =>
+    const unsubscribe = useOnboardingStore.persist.onFinishHydration(() =>
       setHasHydrated(true),
     );
     if (useOnboardingStore.persist.hasHydrated()) setHasHydrated(true);
-    return unsub;
+    return unsubscribe;
   }, []);
 
   if (!hasHydrated) {
