@@ -17,18 +17,20 @@ export const OnboardingForm: React.FC<OnboardingFormProps> = ({
 }) => {
   const [onboardingStep, setOnboardingStep] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [onboardingFormData, setOnboardingFormData] = useState<OnboardingFormDataTypes>({
-    id: nanoid(),
-    username: "",
-    currentWeight: "",
-    goal: null,
-  });
+  const [onboardingFormData, setOnboardingFormData] =
+    useState<OnboardingFormDataTypes>({
+      id: nanoid(),
+      username: "",
+      currentWeight: "",
+      goal: null,
+    });
 
   const isNextDisabled = () => {
     if (onboardingStep === 1) return onboardingFormData.username.trim() === "";
     if (onboardingStep === 2)
       return (
-        onboardingFormData.currentWeight.trim() === "" || Number(onboardingFormData.currentWeight) <= 0
+        onboardingFormData.currentWeight.trim() === "" ||
+        Number(onboardingFormData.currentWeight) <= 0
       );
     if (onboardingStep === 3) return onboardingFormData.goal === null;
     return false;
@@ -100,7 +102,12 @@ export const OnboardingForm: React.FC<OnboardingFormProps> = ({
                 type="text"
                 placeholder="Your name"
                 value={onboardingFormData.username}
-                onChange={(e) => setOnboardingFormData({ ...onboardingFormData, username: e.target.value })}
+                onChange={(e) =>
+                  setOnboardingFormData({
+                    ...onboardingFormData,
+                    username: e.target.value,
+                  })
+                }
                 onKeyDown={(e) => e.key === "Enter" && handleNext()}
                 className="w-full border-2 border-orange-400 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-orange-300 transition-all duration-300 text-black placeholder:text-gray-400"
               />
@@ -121,7 +128,10 @@ export const OnboardingForm: React.FC<OnboardingFormProps> = ({
                   value={onboardingFormData.currentWeight}
                   min={1}
                   onChange={(e) =>
-                    setOnboardingFormData({ ...onboardingFormData, currentWeight: e.target.value })
+                    setOnboardingFormData({
+                      ...onboardingFormData,
+                      currentWeight: e.target.value,
+                    })
                   }
                   onKeyDown={(e) => e.key === "Enter" && handleNext()}
                   className="w-full border-2 border-orange-400 rounded-xl px-4 py-3 pr-14 outline-none focus:ring-2 focus:ring-orange-300 transition-all duration-300 text-black placeholder:text-gray-400"
@@ -143,7 +153,12 @@ export const OnboardingForm: React.FC<OnboardingFormProps> = ({
               <div className="flex flex-col gap-3">
                 <button
                   type="button"
-                  onClick={() => setOnboardingFormData({ ...onboardingFormData, goal: "gain" })}
+                  onClick={() =>
+                    setOnboardingFormData({
+                      ...onboardingFormData,
+                      goal: "gain",
+                    })
+                  }
                   className={`border-2 rounded-xl px-4 py-3 text-left transition-all duration-300 font-bold ${
                     onboardingFormData.goal === "gain"
                       ? "border-orange-400 bg-orange-400 text-black"
@@ -157,7 +172,12 @@ export const OnboardingForm: React.FC<OnboardingFormProps> = ({
                 </button>
                 <button
                   type="button"
-                  onClick={() => setOnboardingFormData({ ...onboardingFormData, goal: "lose" })}
+                  onClick={() =>
+                    setOnboardingFormData({
+                      ...onboardingFormData,
+                      goal: "lose",
+                    })
+                  }
                   className={`border-2 rounded-xl px-4 py-3 text-left transition-all duration-300 font-bold ${
                     onboardingFormData.goal === "lose"
                       ? "border-orange-400 bg-orange-400 text-black"

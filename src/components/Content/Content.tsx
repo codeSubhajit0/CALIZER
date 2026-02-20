@@ -10,13 +10,14 @@ import { useFeatureFlags } from "@/hooks/useFeatureFlags";
 export const Content: React.FC = () => {
   const { isEnabled } = useFeatureFlags();
   const [activeScreen, setActiveScreen] = useState<SCREEN_NAMES>("Dashboard");
-  const [showOnboarding, setShowOnboarding] = useState(true);
+  const [showOnboardingModal, setShowOnboardingModal] = useState(true);
 
   return (
     <div className="h-screen w-full">
-      {showOnboarding && isEnabled("onboarding_step_form_functionality") && (
-        <OnboardingForm onComplete={() => setShowOnboarding(false)} />
-      )}
+      {showOnboardingModal &&
+        isEnabled("onboarding_step_form_functionality") && (
+          <OnboardingForm onComplete={() => setShowOnboardingModal(false)} />
+        )}
       <div className="relative w-full min-h-full bg-white bg-[radial-gradient(circle,rgba(0,0,0,0.12)_1px,transparent_1.2px)] bg-size-[22px_22px]">
         <div>
           <div className="mx-auto max-w-360 w-full">
