@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Home from "../Pages/home/Home";
-import Navigation from "../Utils/navigation/Navigation";
 import { OnboardingForm } from "../Utils/form/on-boarding-form/OnboardingForm";
 import type { SCREEN_NAMES } from "@/constants/global.types";
 import { useFeatureFlags } from "@/hooks/useFeatureFlags";
 import { useOnboardingStore } from "@/store/onboarding.store";
 import LoaderScreen from "../Utils/loader-screen/LoaderScreen";
+import Navigator from "../Utils/navigator/Navigator";
 
 export const Content: React.FC = () => {
   const { isEnabled } = useFeatureFlags();
@@ -36,7 +36,7 @@ export const Content: React.FC = () => {
         <div>
           <div className="mx-auto max-w-360 w-full">
             <div className="px-5 py-5">
-              <Navigation
+              <Navigator
                 activeScreen={activeScreen}
                 onScreenChange={setActiveScreen}
               />

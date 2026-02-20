@@ -6,12 +6,12 @@ import type { SCREEN_NAMES } from "@/constants/global.types";
 import { Plus } from "lucide-react";
 import { useFeatureFlags } from "@/hooks/useFeatureFlags";
 
-interface NavigationProps {
+interface NavigatorProps {
   activeScreen: SCREEN_NAMES;
   onScreenChange: (screenName: SCREEN_NAMES) => void;
 }
 
-export const Navigation: React.FC<NavigationProps> = ({
+export const Navigator: React.FC<NavigatorProps> = ({
   activeScreen,
   onScreenChange,
 }) => {
@@ -72,4 +72,4 @@ export const Navigation: React.FC<NavigationProps> = ({
   );
 };
 
-export default Navigation;
+export default Navigator;
