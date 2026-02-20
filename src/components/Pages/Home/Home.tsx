@@ -1,5 +1,5 @@
 import type { SCREEN_NAMES } from "@/constants/global.types";
-import Dashboard from "../Dashboard/Dashboard";
+import Dashboard from "../dashboard/Dashboard";
 
 interface HomeProps {
   activeScreen: SCREEN_NAMES;

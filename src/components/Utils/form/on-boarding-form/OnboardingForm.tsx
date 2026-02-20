@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { nanoid } from "nanoid";
 import type { OnboardingFormDataTypes } from "./OnboardingForm.types";
 import { useOnboardingStore } from "@/store/onboarding.store";
-import LoaderScreen from "../LoaderScreen/LoaderScreen";
+import LoaderScreen from "../../loader-screen/LoaderScreen";
 
 const TOTAL_STEPS = 3;
 
@@ -35,13 +35,8 @@ export const OnboardingForm: React.FC = () => {
   const handleNext = () => {
     if (isNextDisabled()) return;
     if (onboardingStep < TOTAL_STEPS) {
-      setOnboardingStep((s) => s + 1);
+      setOnboardingStep((step) => step + 1);
     } else {
-      console.log({
-        username: onboardingFormData.username,
-        currentWeight: `${onboardingFormData.currentWeight} kg`,
-        goal: onboardingFormData.goal,
-      });
       setLoading(true);
       setTimeout(() => {
         setOnboardingData(onboardingFormData);

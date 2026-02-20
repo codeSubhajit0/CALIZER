@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+.PADDING {
+  @apply p-2;
+}
+.MARGIN-BOTTOM {
+  @apply mb-2;
+}
+.GAP {
+  @apply gap-2;
+}
+.ROUNDED {
+  @apply rounded-xl;
+}
+.BACKGROUND {
+  @apply bg-white;
+}
