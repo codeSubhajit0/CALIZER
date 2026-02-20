@@ -1,4 +1,5 @@
 import Banner from "@/components/Utils/banner/Banner";
+import OnBoardingCard from "@/components/Utils/card/on-boarding-card/OnboardingCard";
 import DateTracker from "@/components/Utils/date-tracker/DateTracker";
 
 const Dashboard: React.FC = () => {
@@ -6,6 +7,7 @@ const Dashboard: React.FC = () => {
     <div>
       <Banner />
       <DateTracker />
+      <OnBoardingCard />
     </div>
   );
 };

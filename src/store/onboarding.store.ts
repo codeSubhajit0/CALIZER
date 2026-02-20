@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
-import type { OnboardingFormDataTypes } from "@/components/Utils/onboarding-form/OnboardingForm.types";
+import type { OnboardingFormDataTypes } from "@/components/Utils/form/on-boarding-form/OnboardingForm.types";
 
 type OnboardingStoreState = {
   onboardingData: OnboardingFormDataTypes | null;

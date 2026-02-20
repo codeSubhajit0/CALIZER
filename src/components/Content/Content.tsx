@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Home from "../Pages/Home/Home";
+import Home from "../Pages/home/Home";
 import Navigation from "../Utils/navigation/Navigation";
-import { OnboardingForm } from "../Utils/onboarding-form/OnboardingForm";
+import { OnboardingForm } from "../Utils/form/on-boarding-form/OnboardingForm";
 import type { SCREEN_NAMES } from "@/constants/global.types";
 import { useFeatureFlags } from "@/hooks/useFeatureFlags";
 import { useOnboardingStore } from "@/store/onboarding.store";

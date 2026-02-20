@@ -27,7 +27,7 @@ const DateTracker: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex justify-between p-3 border-2 rounded-xl bg-white">
+    <div className="flex justify-between border-2 PADDING ROUNDED BACKGROUND MARGIN-BOTTOM">
       <div className="flex flex-col">
         <span className="font-bold text-sm lg:text-3xl">{quote}</span>
         <span className=" text-pretty text-xs lg:text-lg">
@@ -35,7 +35,7 @@ const DateTracker: React.FC = () => {
         </span>
       </div>
       <div className="flex items-center ">
-        <span className="bg-orange-400 p-2 rounded-full">
+        <span className="bg-orange-400 PADDING rounded-full">
           <Calendar size={25} />
         </span>
         <div className="flex flex-col text-xs lg:text-md pl-3 leading-none">
