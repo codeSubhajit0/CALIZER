@@ -35,8 +35,8 @@ const DateTracker: React.FC = () => {
         </span>
       </div>
       <div className="flex items-center ">
-        <span className="bg-orange-400 p-2 rounded-full">
-          <Calendar className="h-4 w-4 lg:h-6 lg:w-6 " />
+        <span className="bg-orange-400 p-2 lg:p-4 rounded-full">
+          <Calendar className="h-4 w-4 lg:h-6 lg:w-6" />
         </span>
         <div className="flex flex-col text-sm lg:text-lg pl-2 leading-none">
           <span>
